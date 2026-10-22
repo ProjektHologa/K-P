@@ -1,0 +1,322 @@
+body 
+{
+    background-color:#e7e7e7;
+   
+body {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+}
+/*główne kpz */
+h1 
+{
+    color: lab(0% 0 0);
+    font-size: 12px;
+    background-color:#0d47a1;
+   padding: 10px ;
+   margin-top: -10px;
+
+}
+
+
+
+
+
+
+ /*logo */
+.logoa img
+{
+    height: 30px;
+    margin-top: 0px;
+    margin-left:px;
+    
+}
+
+
+
+
+
+
+  
+/* Główny pasek menu */
+.menu > ul {
+  list-style: none;
+  margin: ;
+  padding: 10px;
+  display: flex;
+  background-color: #e7e7e7;
+  margin-top:px ;
+  
+}
+
+.menu > ul > li {
+  position: relative;
+}
+
+.menu a {
+  display: block;
+  padding: 15px 20px;
+  color: rgb(51, 51, 51);
+  text-decoration: none;
+  font-size: 20px ;
+}
+
+.menu a:hover {
+  background-color: oklab(85.385% -0.09794 0.17403);
+}
+
+/* Ukryte podmenu */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: lab(28.05% 27.71 -59.6);
+  min-width: 180px;
+}
+
+/* Wyświetlenie podmenu po najechaniu na element główny */
+.dropdown:hover .submenu {
+  display: block;
+}
+
+.submenu li a {
+  padding: 12px 16px;
+}
+
+.submenu li a:hover {
+  background-color: oklab(85.385% -0.09794 0.17403);
+}
+
+/*ruchomy rozzmiar*/
+
+
+h3{
+  
+  color:black;
+font-size: 10px ;
+background-color: aliceblue;
+text-align: center;
+letter-spacing: 10px;
+margin-top: -125px;
+}
+  
+
+
+/*RUCHOWY TEXT */
+.ruchomy-kpz {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+
+}
+
+.ruchomy-kpz1 {
+  display: inline-block;
+  padding-left: 100%;
+  animation: przewijaj 25s linear infinite;
+}
+
+@keyframes przewijaj {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+
+
+
+
+
+
+
+/* kafelki */
+
+
+
+/* Kontener siatki - układa kafelki obok siebie */
+.tile-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  font-family: sans-serif;
+  margin-top: 60px;
+}
+
+/* Główny styl pojedynczego kafelka */
+.interactive-tile {
+  background-color: lch(67.54% 7.04 269.67);
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none; /* Usuwa podkreślenie linku */
+  color: #333333;
+  box-shadow: 0 4px 6px rgba(105, 104, 104, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Efekt najechania myszką (Hover) */
+.interactive-tile:hover {
+  transform: translateY(-5px); /* Uniesienie kafelka */
+  box-shadow: 0 12px 20px lch(47.84% 11.7 273.24);
+}
+
+/* Kontener na zdjęcie zabezpieczający proporcje */
+.tile-image-wrapper {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+/* Styl zdjęcia */
+.tile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Wypełnia przestrzeń bez zniekształcania */
+  transition: transform 0.3s ease;
+}
+
+/* Delikatne przybliżenie zdjęcia przy najechaniu */
+.interactive-tile:hover .tile-image {
+  transform: scale(1.05);
+}
+
+/* Kontener na tekst wewnątrz kafelka */
+.tile-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Tytuł */
+.tile-title {
+  margin: 0 0 10px 0;
+  font-size: 1.25rem;
+  color: lab(0% 0 0);
+  center; 
+}
+
+/* Opis */
+.tile-description {
+  margin: 0;
+  font-size: 0.95rem;
+  color: lab(0% 0 0);
+  line-height: 1.5;
+  center;
+}
+
+/* ==========================================
+   WERSJA MOBILNA — UKŁAD PODOBNY DO KOMPUTERA
+   Dopisz na końcu KP1STYLE.CSS
+   ========================================== */
+
+/* Telefon ma używać rzeczywistej szerokości ekranu */
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+/* Zachowaj standardowy wygląd całej strony */
+body {
+    min-width: 320px;
+}
+
+/* MENU — elementy obok siebie */
+.menu {
+    width: 100%;
+}
+
+.menu > ul {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: visible;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+.menu > ul > li {
+    flex: 0 0 auto;
+}
+
+.menu a {
+    white-space: nowrap;
+}
+
+/* Podmenu pozostaje rozwijane */
+.menu .dropdown {
+    position: relative;
+}
+
+.menu .submenu {
+    z-index: 9999;
+}
+
+/* Pasek kontaktowy */
+body > h1 {
+    white-space: nowrap;
+    overflow-x: auto;
+    font-size: 12px;
+}
+
+/* Ruchomy tekst */
+.ruchomy-kpz {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.ruchomy-kpz1 {
+    white-space: nowrap;
+}
+
+/* KATALOG KP1 — zachowanie układu komputerowego */
+.kp1-catalog {
+    width: 100%;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Na telefonie katalog nie zmienia się w układ pionowy.
+   Zamiast tego można przesunąć go poziomo. */
+@media screen and (max-width: 700px) {
+    .kp1-catalog {
+        width: 100%;
+        max-width: none;
+        min-width: 700px;
+        margin: 20px 0;
+    }
+
+    .kp1-catalog .kp1-intro {
+        grid-template-columns: 1fr 1.05fr;
+    }
+
+    .kp1-catalog .kp1-technical {
+        grid-template-columns: 1fr 0.75fr 1.1fr;
+    }
+
+    .kp1-catalog .kp1-technical-image:last-child {
+        grid-column: auto;
+    }
+
+    .kp1-catalog .kp1-panel {
+        grid-template-columns: 140px 1fr;
+    }
+
+    .kp1-catalog .kp1-table {
+        min-width: 650px;
+    }
+}
