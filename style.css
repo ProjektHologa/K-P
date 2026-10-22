@@ -215,25 +215,17 @@ margin-top: -125px;
   center;
 }
 
-/* ==========================================
-   WERSJA MOBILNA — UKŁAD PODOBNY DO KOMPUTERA
-   Dopisz na końcu KP1STYLE.CSS
-   ========================================== */
 
-/* Telefon ma używać rzeczywistej szerokości ekranu */
-html {
-    -webkit-text-size-adjust: 100%;
-    text-size-adjust: 100%;
-}
 
-/* Zachowaj standardowy wygląd całej strony */
-body {
-    min-width: 320px;
-}
 
-/* MENU — elementy obok siebie */
+
+/* POPRAWKA MENU NA TELEFONIE */
+
 .menu {
+    display: block;
     width: 100%;
+    position: relative;
+    overflow: visible;
 }
 
 .menu > ul {
@@ -241,82 +233,46 @@ body {
     flex-wrap: nowrap;
     align-items: center;
     width: 100%;
-    overflow-x: auto;
-    overflow-y: visible;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
+    margin: 0;
+    padding: 10px;
+    list-style: none;
+    background-color: #e7e7e7;
+    overflow: visible;
 }
 
 .menu > ul > li {
-    flex: 0 0 auto;
+    position: relative;
+    flex-shrink: 0;
 }
 
 .menu a {
+    display: block;
+    padding: 12px 15px;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
     white-space: nowrap;
-}
-
-/* Podmenu pozostaje rozwijane */
-.menu .dropdown {
-    position: relative;
 }
 
 .menu .submenu {
-    z-index: 9999;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 99999;
+    min-width: 180px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: lab(28.05% 27.71 -59.6);
 }
 
-/* Pasek kontaktowy */
-body > h1 {
-    white-space: nowrap;
-    overflow-x: auto;
-    font-size: 12px;
+.menu .dropdown:hover > .submenu {
+    display: block;
 }
 
-/* Ruchomy tekst */
-.ruchomy-kpz {
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-}
 
-.ruchomy-kpz1 {
-    white-space: nowrap;
-}
 
-/* KATALOG KP1 — zachowanie układu komputerowego */
-.kp1-catalog {
-    width: 100%;
-    max-width: 1100px;
-    margin-left: auto;
-    margin-right: auto;
-}
 
-/* Na telefonie katalog nie zmienia się w układ pionowy.
-   Zamiast tego można przesunąć go poziomo. */
-@media screen and (max-width: 700px) {
-    .kp1-catalog {
-        width: 100%;
-        max-width: none;
-        min-width: 700px;
-        margin: 20px 0;
-    }
 
-    .kp1-catalog .kp1-intro {
-        grid-template-columns: 1fr 1.05fr;
-    }
 
-    .kp1-catalog .kp1-technical {
-        grid-template-columns: 1fr 0.75fr 1.1fr;
-    }
-
-    .kp1-catalog .kp1-technical-image:last-child {
-        grid-column: auto;
-    }
-
-    .kp1-catalog .kp1-panel {
-        grid-template-columns: 140px 1fr;
-    }
-
-    .kp1-catalog .kp1-table {
-        min-width: 650px;
-    }
-}

@@ -212,3 +212,63 @@ margin-top: -125px;
 
 }
 
+
+
+
+
+
+
+/* POPRAWKA MENU NA TELEFONIE */
+
+.menu {
+    display: block;
+    width: 100%;
+    position: relative;
+    overflow: visible;
+}
+
+.menu > ul {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+    list-style: none;
+    background-color: #e7e7e7;
+    overflow: visible;
+}
+
+.menu > ul > li {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.menu a {
+    display: block;
+    padding: 12px 15px;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.menu .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 99999;
+    min-width: 180px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: lab(28.05% 27.71 -59.6);
+}
+
+.menu .dropdown:hover > .submenu {
+    display: block;
+}
+
+
+
